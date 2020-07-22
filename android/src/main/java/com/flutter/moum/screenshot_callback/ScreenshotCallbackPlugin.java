@@ -32,8 +32,6 @@ public class ScreenshotCallbackPlugin implements MethodCallHandler {
 
     @Override
     public void onMethodCall(MethodCall call, Result result) {
-        //Log.d(TAG, "onMethodCall: ");
-
         if (call.method.equals("initialize")) {
             handler = new Handler(Looper.getMainLooper());
             if (Build.VERSION.SDK_INT >= 29) {

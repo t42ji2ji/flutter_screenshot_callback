@@ -22,7 +22,6 @@ class _MyAppState extends State<MyApp> {
 
   void init() async {
     await initScreenshotCallback();
-
   }
 
   //It must be created after permission is granted.
@@ -36,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     screenshotCallback.addListener(() {
-      print("We can add multiple listeners ");
+      print("OOXX");
     });
   }
 

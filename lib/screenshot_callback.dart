@@ -18,7 +18,7 @@ class ScreenshotCallback {
   /// Defaults to `true`.
   bool requestPermissions;
 
-  ScreenshotCallback({ this.requestPermissions }) {
+  ScreenshotCallback({this.requestPermissions}) {
     requestPermissions ??= true;
     initialize();
   }
@@ -52,11 +52,9 @@ class ScreenshotCallback {
   }
 
   Future<void> checkPermission() async {
-    PermissionStatus status = await PermissionHandler()
-        .checkPermissionStatus(PermissionGroup.storage);
-
-    if (status != PermissionStatus.granted) {
-      await PermissionHandler().requestPermissions([PermissionGroup.storage]);
+    print('check permission');
+    if (await Permission.storage.request().isGranted) {
+      // await PermissionHandler().requestPermissions([PermissionGroup.storage]);
     }
   }
 }
